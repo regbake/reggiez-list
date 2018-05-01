@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+      .ula {
+        background-color: red;
+        list-style-type: none;
+        margin: 2%;
+        padding: 0;
+        height: auto;
+      }
+
+      .ula li:first-child {
+        background-color: white;
+      }
+
+      .contain {
+        background-color: green;
+        width: 90vw;
+        /* height: 90vh; */
+        display: flex;
+        flex: wrap;
+        justify-content: center;
+        /* align-items: center; */
+      }
+
+      .holder {
+        background-color: purple;
+        height: 80%;
+        margin: 1%;
+      }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="contain">
+        <div class="holder">
+            <ul class="ula things">
+                <li>Things I like</li>
+                <li>howdy</li>
+            </ul>
+        </div>
+
+        <div class="holder">
+          <ul class="ula places">
+              <li>Places that are</li>
+              <li>shuup</li>
+          </ul>
+        </div>
+
+        <div class="holder">
+          <ul class="ula palabras">
+            <li>que Onda</li>
+            <li>senor</li>
+          </ul>
+        </div>
+
+        <div class="holder">
+          <ul class="ula animals">
+            <li>These are typical</li>
+            <li>boating</li>
+          </ul>
+        </div>
+
+        <div class="holder">
+          <ul class="ula beers">
+            <li>These are average</li>
+            <li>whiskey</li>
+          </ul>
+        </div>
+    </div>
+
+    <script>
+        var things = [
+          "baseball", "soccer balls", "boats", "bros", "boulders", "bikes", "boobies", "climbing", "chess",
+          "marijuana", "weed", "joints", "fuegadors", "beards", "moztachs"
+        ];
+
+        var places = [
+          "vancouver", "toronto", "oakland", "san juan", "p town", "sf", "davis", "houston", "paris",
+          "madrid", "reno", "benis", "nyny", "panamama", "Bogota", "Medellin", "Pereira"
+        ]
+
+        var palabras = [
+          "hogar", "catalan", "pruebas", "culo", "agua tibia", "amando las chicas"
+        ]
+
+        var animals = [
+          "dog", "cat", "fish", "bros", "homo sapiens", "turtles", "cheese"
+        ]
+
+        var beers = [
+          "xx", "lagunitas", "mexican"
+        ]
+
+        appendArray(things, 'things');
+        appendArray(places, 'places');
+        appendArray(animals, 'animals');
+        appendArray(palabras, 'palabras');
+        appendArray(beers, 'beers');
+
+        //loops over arrayName and appends to ulClassName
+        function appendArray(arrayName, ulClassName){
+          for (var i=0; i<arrayName.length; i++){
+            $('.' + ulClassName).append('<li>' + arrayName[i] + '</li>');
+          }
+        }
+    </script>
+</body>
+</html>
